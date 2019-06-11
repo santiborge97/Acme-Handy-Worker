@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles.xml
+ *
+ * Copyright (C) 2018 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+	<definition name="report/display" extends="master.page">	
+		<put-attribute name="title" value="Report" />
+		<put-attribute name="body" value="/views/report/displayReport.jsp" />
+	</definition>
+	
+	<definition name="report/listReport" extends="master.page">	
+		<put-attribute name="title" value="Referee: List of reports" />
+		<put-attribute name="body" value="/views/report/listReport.jsp" />
+	</definition>
+	
+	<definition name="report/editReport" extends="master.page">	
+		<put-attribute name="title" value="Referee: Edit report" />
+		<put-attribute name="body" value="/views/report/editReport.jsp" />
+	</definition>
+	
+</tiles-definitions>

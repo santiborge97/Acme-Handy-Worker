@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles.xml
+ *
+ * Copyright (C) 2018 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+	<definition name="administrator/action-1" extends="master.page">	
+		<put-attribute name="title" value="Administrator: Action 1" />
+		<put-attribute name="body" value="/views/administrator/action-1.jsp" />
+	</definition>
+	
+	<definition name="administrator/action-2" extends="master.page">	
+		<put-attribute name="title" value="Administrator: Action 2" />
+		<put-attribute name="body" value="/views/administrator/action-2.jsp" />
+	</definition>
+	
+	<definition name="administrator/displayWarranty" extends="master.page">	
+		<put-attribute name="title" value="Administrator: Display of warranty" />
+		<put-attribute name="body" value="/views/administrator/displayWarranty.jsp" />
+	</definition>
+	
+	<definition name="administrator/listWarranty" extends="master.page">	
+		<put-attribute name="title" value="Administrator: List of warranties" />
+		<put-attribute name="body" value="/views/administrator/listWarranty.jsp" />
+	</definition>
+	
+	<definition name="administrator/editWarranty" extends="master.page">	
+		<put-attribute name="title" value="Administrator: Edit warranties" />
+		<put-attribute name="body" value="/views/administrator/editWarranty.jsp" />
+	</definition>
+	
+	<definition name="administrator/displayCategory" extends="master.page">	
+		<put-attribute name="title" value="Administrator: Display of category" />
+		<put-attribute name="body" value="/views/administrator/displayCategory.jsp" />
+	</definition>
+	
+	<definition name="administrator/listCategories" extends="master.page">	
+		<put-attribute name="title" value="Administrator: listCategories" />
+		<put-attribute name="body" value="/views/administrator/listCategories.jsp" />
+	</definition>
+	
+	<definition name="administrator/editCategory" extends="master.page">	
+		<put-attribute name="title" value="Administrator: Edit category" />
+		<put-attribute name="body" value="/views/administrator/editCategory.jsp" />
+
+	</definition>
+	
+	<definition name="administrator/signUpAdministrator" extends="master.page">	
+		<put-attribute name="title" value="Administrator: Register administrator" />
+		<put-attribute name="body" value="/views/administrator/signUpAdministrator.jsp" />
+
+	</definition>
+	
+	<definition name="administrator/editConfiguration" extends="master.page">	
+		<put-attribute name="title" value="Administrator: Edit configuration" />
+		<put-attribute name="body" value="/views/administrator/editConfiguration.jsp" />
+
+	</definition>
+	
+</tiles-definitions>

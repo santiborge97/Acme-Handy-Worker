@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * PopulateDatabase.xml
+ *
+ * Copyright (C) 2018 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	">
+	
+	<!-- User account Administrator-->
+
+	<bean id="userAccount1" class="security.UserAccount">
+		<property name="username" value="admin" />
+		<property name="password" value="21232f297a57a5a743894a0e4a801fc3" />
+		<property name="isNotBanned" value="true" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Administrator -->	
+	
+	<bean id="administrator1" class="domain.Administrator">
+		<property name="name" value="María" />
+		<property name="middleName" value="José" />
+		<property name="surname" value="Sánchez González" />
+		<property name="photo" value="http://www.dropbox.com/url1/" />
+		<property name="email" value="adminitrator1@mail.com" />
+		<property name="phone" value="+34 6769252365" />
+		<property name="address" value="Luna de Escacena 33" />
+		<property name="suspicious" value="false" />
+		<property name="userAccount" ref="userAccount1" />
+	</bean>
+	
+	<!-- Boxes Administrator -->
+	
+	<bean id="box1" class="domain.Box">
+		<property name="name" value="in box" />
+		<property name="byDefault" value="True" />
+		<property name="actor" ref="administrator1" />
+		
+	</bean>
+
+	<bean id="box2" class="domain.Box">
+		<property name="name" value="out box" />
+		<property name="byDefault" value="True" />
+		<property name="actor" ref="administrator1" />
+	
+	</bean>
+
+	<bean id="box3" class="domain.Box">
+		<property name="name" value="trash box" />
+		<property name="byDefault" value="True" />
+		<property name="actor" ref="administrator1" />
+		
+	</bean>
+
+	<bean id="box4" class="domain.Box">
+		<property name="name" value="spam box" />
+		<property name="byDefault" value="True" />
+		<property name="actor" ref="administrator1" />
+		
+	</bean>
+	
+	<!-- Categories -->
+
+	<bean id="category1" class="domain.Category">
+		<property name="nameEn" value="CATEGORY" />
+		<property name="nameSp" value="CATEGORY" />
+
+	</bean>
+	
+	<bean id="category2" class="domain.Category">
+		<property name="nameEn" value="Carpentry" />
+		<property name="nameSp" value="Carpintería" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category3" class="domain.Category">
+		<property name="nameEn" value="Ceiling repair" />
+		<property name="nameSp" value="Reparación de techo" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category4" class="domain.Category">
+		<property name="nameEn" value="Cleaning" />
+		<property name="nameSp" value="Limpieza" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category5" class="domain.Category">
+		<property name="nameEn" value="Concrete work" />
+		<property name="nameSp" value="Cementación" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category6" class="domain.Category">
+		<property name="nameEn" value="Doors" />
+		<property name="nameSp" value="Puertas" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category7" class="domain.Category">
+		<property name="nameEn" value="Electrical wiring" />
+		<property name="nameSp" value="Cableado eléctrico" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category8" class="domain.Category">
+		<property name="nameEn" value="Fan installation" />
+		<property name="nameSp" value="Intalación de ventilación" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category9" class="domain.Category">
+		<property name="nameEn" value="Fence fixing" />
+		<property name="nameSp" value="Repación de valla" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category10" class="domain.Category">
+		<property name="nameEn" value="Home security systems" />
+		<property name="nameSp" value="Sistema de securidad en el hogar" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category11" class="domain.Category">
+		<property name="nameEn" value="Insulation installation" />
+		<property name="nameSp" value="Intalación de aislamineto" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category12" class="domain.Category">
+		<property name="nameEn" value="Lamp repairs" />
+		<property name="nameSp" value="Reparación de lámparas" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category13" class="domain.Category">
+		<property name="nameEn" value="Moving" />
+		<property name="nameSp" value="Traslado" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category14" class="domain.Category">
+		<property name="nameEn" value="Painting" />
+		<property name="nameSp" value="Pintura" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category15" class="domain.Category">
+		<property name="nameEn" value="Pest control" />
+		<property name="nameSp" value="Cuidado de mascotas" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category16" class="domain.Category">
+		<property name="nameEn" value="Plumbing repairs" />
+		<property name="nameSp" value="Repaciones de fontanería" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category17" class="domain.Category">
+		<property name="nameEn" value="Roofing" />
+		<property name="nameSp" value="Techado" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category18" class="domain.Category">
+		<property name="nameEn" value="Shelf installation" />
+		<property name="nameSp" value="Intalación de estantería" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category19" class="domain.Category">
+		<property name="nameEn" value="Solar panels" />
+		<property name="nameSp" value="Paneles solares" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category20" class="domain.Category">
+		<property name="nameEn" value="Soundproofing," />
+		<property name="nameSp" value="Aislamiento sonoro" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category21" class="domain.Category">
+		<property name="nameEn" value="Sprinkler repair" />
+		<property name="nameSp" value="Repación de aspersores" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<bean id="category22" class="domain.Category">
+		<property name="nameEn" value="Window repair" />
+		<property name="nameSp" value="Repación de vetanas" />
+		<property name="parent" ref="category1" />
+	</bean>
+	
+	<!-- Congifuration -->
+	
+	<bean id="configuration" class="domain.Configuration">
+		<property name="spamWord">
+			<list>
+				<value>viagra</value>
+				<value>cialis</value>
+				<value>sex</value>
+				<value>one million</value>
+				<value>you’ve been selected</value>
+				<value>Nigeria</value>
+				<value>sexo</value>
+				<value>un millón</value>
+				<value>ha sido seleccionado”</value>
+			</list>
+		</property>
+		<property name="creditCardMakes">
+			<list>
+				<value>VISA</value>
+				<value>MASTER</value>
+				<value>DINNERS</value>
+				<value>AMEX</value>
+			</list>
+		</property>	
+		<property name="vatTax" value="0.21" />
+		<property name="countryCode" value="+34" />
+		<property name="finderTime" value="1" />
+		<property name="finderResult" value="10" />
+		<property name="welcomeMessageEs" value="¡Bienvenidos a Acme Handy Worker! Precio, calidad y confianza en el mismo sitio" />
+		<property name="banner" value="https://tinyurl.com/acme-handy-worker-logo" />
+		<property name="welcomeMessage" value="Welcome to Acme Handy Worker! Price, quality, and trust in a single place" />
+	</bean>
+	
+	
+</beans>
